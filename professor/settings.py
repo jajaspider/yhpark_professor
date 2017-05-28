@@ -25,7 +25,7 @@ SECRET_KEY = '774+7s2bapiq0t19zwk)n51^pczld!bvj-)7(ibb14b_n*4^dl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sonagod.tk:6665']
+ALLOWED_HOSTS = ['sonagod.tk']
 
 
 # Application definition
