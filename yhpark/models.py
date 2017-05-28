@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Professor(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey()
     force = models.CharField(max_length=500)
     research = models.CharField(max_length=500)
     academy = models.CharField(max_length=500)
