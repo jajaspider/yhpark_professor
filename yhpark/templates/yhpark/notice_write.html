@@ -1,0 +1,40 @@
+{% extends 'yhpark/base.html' %} {% block content %}
+<div class="container">
+  <div class="clearfix">
+    <div class="col-md-10 wrap_content">
+      <div class="page-header clearfix text-center">
+        <h2>글쓰기</h2>
+      </div>
+      <!-- <form name="write_form" method="post" action="{% url 'notice_write' %}">{% csrf_token %}
+        <div class="form-group">
+          <label for="title">글 제목</label>
+          <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요." required>
+        </div>
+        <div class="form-group">
+          <label for="contents">글 내용</label>
+          <textarea rows="10" cols="50" class="form-control" id="contents" placeholder="내용을 입력하세요." required  ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="url">url</label>
+          <input type="url" class="form-control" id="url" placeholder="관련 url을 입력하세요" required>
+        </div>
+        <div class="form-group">
+          <label for="file">첨부파일</label>
+          <input type="file" class="form-control" id="file" placeholder="내용을 입력하세요">
+        </div>
+
+        <hr>
+
+        <div class="form-group text-center">
+          <button type="submit" class="save btn btn-default">확인</button>
+          <a href="{% url 'notice' %}"><button type="button" class="btn btn-primary">취소</button></a>
+        </div>
+      </form> -->
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

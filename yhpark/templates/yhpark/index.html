@@ -1,0 +1,93 @@
+{% extends 'yhpark/base.html' %}
+{% load staticfiles %}
+{% block content %}
+  <div class="container">
+    <!-- 메인뷰 -->
+    <div class="clearfix">
+      <div class="col-md-12 wrap_content">
+        <div class="page-header clearfix">
+          <!-- 배너 -->
+          <div class="carousel slide" id="banner" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#banner" data-slide-to="0" class="active"></li>
+              <li data-target="#banner" data-slide-to="1"></li>
+              <li data-target="#banner" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <!-- 배너 이미지 -->
+              <div class="item active">
+                <!-- 이미지 1 -->
+                <img src='{% static "banner-image/1.jpg" %}' alt="galaxy s7">
+              </div>
+              <div class="item">
+                <img src='{% static "banner-image/2.jpg" %}' alt="galaxy s7">
+              </div>
+              <div class="item">
+                <img src='{% static "banner-image/3.jpg" %}' alt="iPhone 7">
+              </div>
+            </div>
+            <a class="left carousel-control" href="#banner" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">previous</span>
+                                    </a>
+            <a class="right carousel-control" href="#banner" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">previous</span>
+                                    </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- 테이블 1 -->
+        <form>
+          <table class="table table-hover">
+            <thead>
+              <tr class="text-center">
+                <td>
+                  <h4>공지사항</h4></td>
+              </tr>
+            </thead>
+            {% if noticelist %}
+            <tbody>
+              {% for boardRow in noticelist %}
+              <tr class="text-center">
+                <td><a style="color:black;" href={% url 'notice_datail' pk=boardRow.id %}>{{ boardRow.title }}</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            {% else %}
+            <tbody>
+              <tr class="text-center">
+                <td>데이터 없음</td>
+              </tr>
+            </tbody>
+            {% endif %}
+          </table>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <!-- 테이블 2 -->
+        <form>
+          <table class="table table-hover">
+            <thead>
+              <tr class="text-center">
+                <td>
+                  <h4>교육 소식</h4></td>
+              </tr>
+            </thead>
+            {% if boardList %}
+            <tbody>
+              {% for boardRow in boardList %}
+              <tr>
+                <td>{{ boardRow.id }}</td>
+                <td>{{ boardRow.file_name }}</td>
+                <td>{{ boardRow.created_time }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            {% endif %}
+          </table>
+        </form>
+      </div>
+    </div>
+{% endblock %}
