@@ -29,3 +29,6 @@ def notice(request):
 def notice_datail(request,pk):
     boardList = get_object_or_404(Notice, pk=pk)
     return render(request, 'yhpark/notice_datail.html', {'boardList': boardList})
+
+def professor(request):
+    return render(request,'yhpark/professor_info.html')
