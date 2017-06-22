@@ -1,113 +1,116 @@
 {% load staticfiles %}
 <html>
-    <head>
-        <!-- 합쳐지고 최소화된 최신 CSS -->
-        <link rel="stylesheet" href='{% static "bootstrap-3.3.2-dist/css/bootstrap.css" %}'>
-        <!-- 부가적인 테마 -->
-        <link rel="stylesheet" href='{% static "bootstrap-3.3.2-dist/css/bootstrap-theme.css" %}'>
-        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-        <script src='{% static "bootstrap-3.3.2-dist/js/jquery-3.1.1.js" %}'></script>
-        <script src='{% static "bootstrap-3.3.2-dist/js/bootstrap.js" %}'></script>
-        <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
-        <title>동의대학교 컴퓨터 소프트웨어 공학과 박유현</title>
-        <meta charset="utf-8">
-        <style>
-            body {
-                padding-top: 70px;
-            }
-            img {
-                margin: 0 auto;
-                height: 440px;
-            }
-        </style>
-    </head>
 
-    <body>
-        <div class="nav navbar-inverse navbar-fixed-top">
-            <!-- navigation bar 어두운색 설정, 화면 상단에 고정 -->
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{% url 'index' %}">
-                        <span class=""></span><!-- 이 부분에 아이콘 삽입 -->
+<head>
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href='{% static "bootstrap-3.3.2-dist/css/bootstrap.css" %}'>
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href='{% static "bootstrap-3.3.2-dist/css/bootstrap-theme.css" %}'>
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src='{% static "bootstrap-3.3.2-dist/js/jquery-3.1.1.js" %}'></script>
+  <script src='{% static "bootstrap-3.3.2-dist/js/bootstrap.js" %}'></script>
+  <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+  <title>동의대학교 컴퓨터 소프트웨어 공학과 박유현</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      padding-top: 70px;
+    }
+
+    img {
+      margin: 0 auto;
+      height: 440px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="nav navbar-inverse navbar-fixed-top">
+    <!-- navigation bar 어두운색 설정, 화면 상단에 고정 -->
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand " href="{% url 'index' %}">
+                        <span class=""><img src="{% static 'mainimg.png' %}" style="width:25px;height:auto;"></img></span><!-- 이 부분에 아이콘 삽입 -->
                         <strong>컴퓨터 소프트웨어 공학과<strong>
                     </a>
-                </div>
-                <div class="navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"
-                               href="#" role="button" aria-expanded="false" aria-haspopup="true">
+      </div>
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-haspopup="true">
                                    교수님 정보
                                    <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{% url 'professor' %}">교수정보</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"
-                               href="#" role="button" aria-expanded="false" aria-haspopup="true">
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{% url 'professor' %}">교수정보</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-haspopup="true">
                                    실적
                                    <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">국내 논문</a></li>
-                                <li><a href="#">국제 논문</a></li>
-                                <li><a href="#">사회 봉사</a></li>
-                                <li><a href="#">PROJECT</a></li>
-                            </ul>
-                        </li>
-                        판<li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"
-                               href="#" role="button" aria-expanded="false" aria-haspopup="true">
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">국내 논문</a></li>
+              <li><a href="#">국제 논문</a></li>
+              <li><a href="#">사회 봉사</a></li>
+              <li><a href="#">PROJECT</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-haspopup="true">
                                    게시판
                                    <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{% url 'notice' %}">공지사항</a></li>
-                                <li><a href="#">교육 소식</a></li>
-                                <li><a href="#">자료실</a></li>
-                                <li><a href="#">자유 게시판</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"
-                               href="#" role="button" aria-expanded="false" aria-haspopup="true">
-                                   연구실 소개
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{% url 'notice' %}">공지사항</a></li>
+              <li><a href="#">교육 소식</a></li>
+              <li><a href="#">자료실</a></li>
+              <li><a href="#">자유 게시판</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-haspopup="true">
+                                   연구실
                                    <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">연구원 소개</a></li>
-                                <li><a href="#">연구실 전용 게시판</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                    </ul>
-                </div>
-            </div>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{% url 'student' %}">연구원 소개</a></li>
+              <li><a href="#">연구실 전용 게시판</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% block content %} {% endblock %}
+  <section id="contact" style="background-color:white;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h3 class="section-heading" style="color:black;">Contact</h3>
+          <hr class="primary">
+          <p>이름 : 박유현 | 소속 : 동의대학교 컴퓨터 소프트웨어공학과 | 학과사무실 : 051-891-1724</p>
+          <p>주소 : 부산광역시 부산진구 엄광로 176 동의대학교 정보공학관 901호</p>
+          <br>
+          <p>Copyright Lee sang hwa All Rights Reserved.</p>
+          <br>
         </div>
-{% block content %}
-{% endblock %}
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact</h2>
-                    <hr class="primary">
-                    <p>동의대학교 컴퓨터 소프트웨어 공학과 박유현</p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>051-891-1737</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:yhpark@deu.ac.kr">yhpark@deu.ac.kr</a></p>
-                </div>
-            </div>
+        <div class="col-lg-4 col-lg-offset-2 text-center">
+          <img src='{% static "call.png" %}' style="width:30px;height:auto;"></img> 051-891-1737
         </div>
-    </section>
+        <div class="col-lg-4 text-center">
+          <img src='{% static "mail.png" %}' style="width:30px;height:auto;"></img><a style="color:black;text-decoration:none;" href="mailto:yhpark@deu.ac.kr"> yhpark@deu.ac.kr</a>
+        </div>
+      </div>
+      <br>
 
-    </body>
+    </div>
+  </section>
+</body>
+
 </html>

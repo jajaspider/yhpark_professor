@@ -32,3 +32,6 @@ def notice_datail(request,pk):
 
 def professor(request):
     return render(request,'yhpark/professor_info.html')
+
+def student(request):
+    return render(request,'yhpark/student.html')

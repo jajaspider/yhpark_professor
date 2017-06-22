@@ -17,14 +17,15 @@
               <!-- 배너 이미지 -->
               <div class="item active">
                 <!-- 이미지 1 -->
-                <img src='{% static "banner1.PNG" %}' alt="banner1" style="width:100%;height:300px;">
+                <img src='{% static "banner1.png" %}' alt="banner1" style="width:100%;height:300px;">
               </div>
               <div class="item">
-                <img src='{% static "banner2.PNG" %}' alt="banner2" style="width:100%;height:300px;">
+                <img src='{% static "banner2.png" %}' alt="banner2" style="width:100%;height:300px;">
               </div>
               <div class="item">
-                <img src='{% static "banner3.PNG" %}' alt="banner3" style="width:100%;height:300px;">
+                <img src='{% static "banner3.png" %}' alt="banner3" style="width:100%;height:300px;">
               </div>
+
             </div>
             <a class="left carousel-control" href="#banner" role="button" data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -42,15 +43,18 @@
         <form>
           <table class="table table-hover">
             <thead>
-              <tr class="text-center">
+
+              <tr>
                 <td>
-                  <h4>공지사항</h4></td>
+                  <a class="btn btn-default pull-right" onclick="location.href={% url 'notice' %}">+</a>
+                  <h4><b>공지사항</b></h4></td>
+
               </tr>
             </thead>
             {% if noticelist %}
             <tbody>
               {% for boardRow in noticelist %}
-              <tr class="text-center">
+              <tr>
                 <td><a style="color:black;" href={% url 'notice_datail' pk=boardRow.id %}>{{ boardRow.title }}</a></td>
               </tr>
               {% endfor %}
@@ -70,9 +74,10 @@
         <form>
           <table class="table table-hover">
             <thead>
-              <tr class="text-center">
+              <tr>
                 <td>
-                  <h4>교육 소식</h4></td>
+                  <a class="btn btn-default pull-right">+</a>
+                  <h4><b>교육 소식</h4><b></td>
               </tr>
             </thead>
             {% if boardList %}
@@ -84,6 +89,12 @@
                 <td>{{ boardRow.created_time }}</td>
               </tr>
               {% endfor %}
+            </tbody>
+            {% else %}
+            <tbody>
+              <tr>
+                <td>데이터 없음</td>
+              </tr>
             </tbody>
             {% endif %}
           </table>
